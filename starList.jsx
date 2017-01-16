@@ -4,12 +4,12 @@ import stars from './stars.json';
 
 class StarList extends React.Component {
     render() {
-        return  <ul>
-                    <li>Star</li>
-                    <li>That Star</li>
-                    <li>Other Star</li>
-                </ul>
+        return <ul>
+            {stars.map((s, i) =>
+                <li key={i}>{s}</li>
+            )}
+        </ul>
     }
 }
 
-ReactDom.render(<StarList/>, document.getElementById('starList'));
+ReactDom.render(<StarList />, document.getElementById('root'));
