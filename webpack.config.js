@@ -11,7 +11,10 @@ module.exports = {
         'webpack/hot/only-dev-server', // "only" prevents reload on syntax errors
         './main.js' // Your appʼs entry point
     ],
-    output: { path: __dirname, filename: 'bundle.js' },
+    output: {
+        path: __dirname,
+        filename: 'bundle.js',
+    },
     module: {
         loaders: [
             { test: /\.json$/, loader: 'json' },
@@ -24,6 +27,9 @@ module.exports = {
                 exclude: /node_modules/,
             }
         ]
+    },
+    devServer: {
+        historyApiFallback: true
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin()
