@@ -6,8 +6,8 @@ import stars from '../data/stars.json';
 export default class List extends React.Component {
     render() {
         return <ul>
-            {stars.map((s, i) =>
-                <li key={i}><Link to={"/" + s}>{s}</Link></li>
+            {Object.keys(stars).map((s) =>
+                <li key={s}><Link to={"/" + s}>{stars[s].name}</Link></li>
             )}
         </ul>
     }

@@ -1,6 +1,18 @@
-[
-    "Alpha Centauri",
-    "Betelgeuse",
-    "Sirius",
-    "Sol"
-]
+{
+    "alpha-centauri": {
+        "name": "Alpha Centauri",
+        "type": "Awesome"
+    },
+    "betelgeuse": {
+        "name": "Betelgeuse",
+        "type": "Terrible"
+    },
+    "sirius": {
+        "name": "Sirius",
+        "type": "Pretty Cool"
+    },
+    "sol": {
+        "name": "Sol",
+        "type": "Meh"
+    }
+}
