@@ -25,6 +25,22 @@ module.exports = {
                     'babel-loader?' + babelSettings
                 ],
                 exclude: /node_modules/,
+            },
+            {
+                test: /\.s?css$/,
+                loader: 'style-loader'
+            },
+            {
+                test: /\.s?css$/,
+                loader: 'css-loader',
+                query: {
+                    modules: true,
+                    localIdentName: '[name]__[local]__[hash:base64:5]'
+                }
+            },
+            {
+                test: /\.scss$/,
+                loader: 'sass-loader'
             }
         ]
     },
