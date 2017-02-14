@@ -1,0 +1,18 @@
+@mixin font-small {
+    font-size: 12px;
+}
+
+@mixin font-medium {
+    font-size: 16px;
+}
+
+@mixin font-large {
+    font-size: 24px;
+}
+
+@mixin link($color: $text-color) {
+    @include font-small;
+    
+    color: $color;
+    margin: 16px;
+}
