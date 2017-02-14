@@ -19,7 +19,9 @@ export default class Stella extends React.Component {
                         </Link>
                     </li>
                 </ul>
-                {this.props.children}
+                <div className={styles.content}>
+                    {this.props.children}
+                </div>
             </div>
         );
     }

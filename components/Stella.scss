@@ -1,17 +1,26 @@
 @import "../styles/styles";
 
 .stella {
+    box-sizing: border-box;
     height: 100%;
-    background-color: $background-color;
     color: $text-color;
     padding: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .nav {
     padding: 16px 0;
+    display: flex;
+    justify-content: center;
 }
 
 .navLink {
     @include link;
     @include font-medium;
+}
+
+.content {
+    max-width: 300px;
 }
