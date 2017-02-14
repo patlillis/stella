@@ -1,18 +1,22 @@
-{
-    "alpha-centauri": {
+[
+    {
+        "id": "alpha-centauri",
         "name": "Alpha Centauri",
         "type": "Awesome"
     },
-    "betelgeuse": {
+    {
+        "id": "betelgeuse",
         "name": "Betelgeuse",
         "type": "Terrible"
     },
-    "sirius": {
+    {
+        "id": "sirius",
         "name": "Sirius",
         "type": "Pretty Cool"
     },
-    "sol": {
+    {
+        "id": "sol",
         "name": "Sol",
         "type": "Meh"
     }
-}
+]

@@ -1,19 +1,39 @@
 import React from 'react';
 import { Link } from 'react-router'
+import SearchInput, { createFilter } from 'react-search-input'
 import stars from '../data/stars.json';
 import styles from './List.scss';
 
+const KEYS_TO_FILTERS = ['name', 'id']
+
 /// Scrollable list of stars.
 export default class List extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = { searchTerm: '' };
+    }
+
     render() {
-        return <ul>
-            {Object.keys(stars).map((s) =>
-                <li key={s}>
-                    <Link to={"/" + s} className={styles.link}>
-                        {stars[s].name}
-                    </Link>
-                </li>
-            )}
-        </ul>
+        const filteredStars = stars.filter(createFilter(this.state.searchTerm, KEYS_TO_FILTERS))
+
+        return (
+            <div>
+                <SearchInput className="search-input" onChange={(e) => this.searchUpdated(e)} />
+                <ul>
+                    {filteredStars.map((s) =>
+                        <li key={s.id}>
+                            <Link to={"/" + s.id} className={styles.link}>
+                                {s.name}
+                            </Link>
+                        </li>
+                    )}
+                </ul>
+            </div>
+        )
+    }
+
+    searchUpdated(term) {
+        this.setState({ searchTerm: term })
     }
 }
+
