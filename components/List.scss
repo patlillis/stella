@@ -1,1 +1,10 @@
 @import "../styles/styles";
+
+.wrapper {
+    height: 100%;
+}
+
+.list {
+    height: 100%;
+    overflow: auto;
+}

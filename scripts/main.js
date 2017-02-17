@@ -6,19 +6,8 @@ import List from '../components/List.jsx';
 import Locator from '../components/Locator.jsx';
 import Stella from '../components/Stella.jsx';
 
-ReactDom.render((
-    <Router history={browserHistory}>
-        <Route path="/" component={Stella}>
-            <IndexRoute component={List} />
-            <Route path="/locator" component={Locator} />
-            <Route path="/list" component={List} />
-            <Route path="/:star" component={Details} />
-        </Route>
-    </Router>
-), document.getElementById('root'));
-
 $(document).ready(function () {
-    var planetarium = $.virtualsky({
+    window.planetarium = $.virtualsky({
         'id': 'starmap',
         'projection': 'gnomic',
         'ra': 83.8220833,
@@ -35,3 +24,14 @@ $(document).ready(function () {
         'credit': false
     });
 });
+
+ReactDom.render((
+    <Router history={browserHistory}>
+        <Route path="/" component={Stella}>
+            <IndexRoute component={List} />
+            <Route path="/locator" component={Locator} />
+            <Route path="/list" component={List} />
+            <Route path="/:star" component={Details} />
+        </Route>
+    </Router>
+), document.getElementById('root'));

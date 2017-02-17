@@ -1,5 +1,5 @@
 import React from 'react';
-import stars from '../data/stars.json';
+import stars from '../data/stars.js';
 import styles from './Details.scss';
 
 /// Details view for a single star.
@@ -10,10 +10,13 @@ export default class Details extends React.Component {
     }
 
     render() {
+        if (window.planetarium) {
+            window.planetarium.panTo(this.state.star.point.ra, this.state.star.point.ra, 1000);
+        }
+
         return (
             <div className={styles.details}>
                 <h1>{this.state.star.name}</h1>
-                <h2>{this.state.star.type}</h2>
             </div>
         )
     }
